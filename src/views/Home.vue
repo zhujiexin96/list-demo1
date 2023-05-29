@@ -20,7 +20,7 @@
     <div class="van-list">
       <van-tabs v-model="listQuery.year" @change="yearChange($event)" color="#1989fa">
         <van-tab v-for="(item, index) in years" :title="item + '年'" :key="index" :name="item">
-          <van-list v-model="listLoading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+          <van-list v-model="listLoading" :finished="finished" finished-text="没有更多了..." @load="onLoad">
             <Table-vant :option="option" :tableData="listData"></Table-vant>
           </van-list>
         </van-tab>
