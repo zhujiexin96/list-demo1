@@ -1,0 +1,34 @@
+@mixin gSetLine($line: 1, $lh: 1.5){
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  line-height: $lh;
+  word-break: break-word;
+}
+
+@mixin gPlaceholder($size: 1rem){
+  display: block;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAllBMVEUAAADOzs7Ly8vNzc3Nzc3Nzc3Ozs7Nzc3Nzc3Nzc3JycnNzc3Nzc3Ozs7Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Ozs7MzMzNzc3MzMzOzs7Ozs7MzMzMzMzNzc3Nzc3Nzc3Ozs7Nzc3Nzc3Nzc3Ozs7Nzc3Nzc3MzMzOzs7Nzc3Nzc3Nzc3Ly8vNzc3Nzc3Nzc3Nzc3MzMzNzc0bkv8iAAAAMXRSTlMAv4DIuH+IvyiYD7RUSurXzaGNhnc+M8SmJBcF9ebh25JqZ6twWU9D+sNgOx7SsO8KTvUMuwAAAzpJREFUaN7tmOmSqjAQRnuEGZFNQeEq4r7v9vu/3L0Tqwm4JETDrZopT/kDKOIpSH9tIrx5UzUfFVGUYCW8JT9DUivBJ/tIqV+4I/kEbdTwG+Mt+cUS24osu1KJNx6xoc22V5XEc5DT2FcicbHAcFuBpIPX1LRLXLwl0i1p4S3NvV7JNHtHS9taBDT7eiUGMoyk+PI8nZIeMnwgYmSMdUomyFjyKw12YaRTMmYjDsDZIsPWKJmxEQFwLGRYCpKpJ5aYbEQIHJuiUlbSDzHdCSXBzUphqfgk1hERB5ZI0mYjTr1cu1Kbk2XzMquJQLJCxhGIBJWqa05Z3ggkfR8ZKx5OhZzYDcw4Cix0W+fy8L5K4mMDcwSPJTHd43+EwYFOHCghWaRYIBTG8RavhKSNOWQBHd06XJBKQgczfDqYPLZsrh0dkEvqmGFGWzpcyMJCtFxQkoQ2wCedrASz38ie2JgCqEgG20KRppYoL147MGfjCYu+gsSJ4QJN0TABOWqSWp+unmmtcNAsGbjA6fm0L9MqcYrvNuINRp+kBlcsyBJok3iCtWhbg+RhowrJMocc067eTdDsJvosqA2tkv7mOvp9FtO2Tgnsh2SxLoXtUDvUKIHdGi+c7O+zFjknOiV8KzL8dzzAjIVOCV9btCaYx9MpgS+8S7rTKYHgvmVg6ZRAvfjlR9rA2Tol+yZyjKhPUkOXhFJOdPcACVWyqVEy545ZxDI5JKU2SYhEShmMT7Tl1STpItHk2VjRtS8dkoSXlmnd6wSd1yUxL6yGff8fg8mrEveEROfhD6f7mmTOE7gQ9JvoFcmYJ3An2gyl1vOSLk9gIi48335SYm9Qvloxqbifk8QjUqyn8BDb4G1MXbJMcwkUsB9RiNQl83wChcQ+dTVVScgTeAYJ0fq5f+5muQTKWdLNNQXJ2aBRvgtl2PIGU1ZiDbMExnJBcQbdkhJvLUig9JczKiWZyhMobEBWCUlbkEAhAY2zZRLerUYrUMShYpFI+EbB7IEqZxrcFEp6wyyBfVAnOdDKXCBZiRMoxxog8UiylSVQzi6VSOp/iODraWYyCeqkesnof0hav1vCqJvaaDkMePOmYv4CScE0fGuuCnYAAAAASUVORK5CYII=") no-repeat center center;
+  background-size: $size;
+  background-color: #F0F0F0;
+  object-fit: cover;
+  &[src^='http']{
+    background-image: none;
+  }
+}
+
+@mixin gSetBg($url,$size:100%) {
+  display: block;
+  background: url($url) no-repeat center center;
+  background-size: $size;
+}
+
+
+@mixin gCenter($top:0) {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: $top;
+}
